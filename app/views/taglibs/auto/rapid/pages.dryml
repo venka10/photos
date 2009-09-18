@@ -1,0 +1,1208 @@
+<!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
+
+<!-- ====== Main Navigation ====== -->
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item with="&Album">Albums</nav-item>
+    <nav-item with="&Comment">Comments</nav-item>
+    <nav-item with="&Group">Groups</nav-item>
+    <nav-item with="&Photo">Photos</nav-item>
+    <nav-item with="&PhotoAlbum">Photo Albums</nav-item>
+  </navigation>
+</def>
+
+
+
+  
+<!-- ====== Album Pages ====== -->
+
+
+<def tag="index-page" for="Album">
+  <page merge title="Albums">
+    <body: class="index-page album" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Albums</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Album">
+  <page merge title="New Album">
+    <body: class="new-page album" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Album</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Album"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Album">
+  <page merge title="Album">
+
+    <body: class="show-page album" param/>
+
+    <content: param>
+          <header param="content-header">
+            <a:parent param="parent-link">&laquo; <name/></a:parent>
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Album</a>
+          </header>
+    
+          <section param="content-body">
+            <section param="collection-section">
+              <h3 param="collection-heading">Children</h3>
+              
+              <collection:children param/>
+            </section>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Album">
+  <page merge title="Edit Album">
+
+    <body: class="edit-page album" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Album" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== Comment Pages ====== -->
+
+
+<def tag="index-page" for="Comment">
+  <page merge title="Comments">
+    <body: class="index-page comment" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Comments</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Comment">
+  <page merge title="New Comment">
+    <body: class="new-page comment" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Comment</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Comment"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Comment">
+  <page merge title="Comment">
+
+    <body: class="show-page comment" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Comment</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="comment" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Comment">
+  <page merge title="Edit Comment">
+
+    <body: class="edit-page comment" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Comment" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== Group Pages ====== -->
+
+
+<def tag="index-page" for="Group">
+  <page merge title="Groups">
+    <body: class="index-page group" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Groups</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Group">
+  <page merge title="New Group">
+    <body: class="new-page group" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Group</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Group"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Group">
+  <page merge title="Group">
+
+    <body: class="show-page group" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Group</a>
+          </header>
+    
+          <section param="content-body">
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Group">
+  <page merge title="Edit Group">
+
+    <body: class="edit-page group" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Group" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== PhotoAlbum Pages ====== -->
+
+
+<def tag="index-page" for="PhotoAlbum">
+  <page merge title="Photo Albums">
+    <body: class="index-page photo-album" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Photo Albums</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="PhotoAlbum">
+  <page merge title="New Photo Album">
+    <body: class="new-page photo-album" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Photo Album</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Photo Album"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="PhotoAlbum">
+  <page merge title="Photo Album">
+
+    <body: class="show-page photo-album" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Photo Album</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="album, photo" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="PhotoAlbum">
+  <page merge title="Edit Photo Album">
+
+    <body: class="edit-page photo-album" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Photo Album" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== PhotoComment Pages ====== -->
+
+
+<def tag="index-page" for="PhotoComment">
+  <page merge title="Photo Comments">
+    <body: class="index-page photo-comment" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Photo Comments</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="PhotoComment">
+  <page merge title="New Photo Comment">
+    <body: class="new-page photo-comment" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Photo Comment</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Photo Comment"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="PhotoComment">
+  <page merge title="Photo Comment">
+
+    <body: class="show-page photo-comment" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Photo Comment</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="comment, photo" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="PhotoComment">
+  <page merge title="Edit Photo Comment">
+
+    <body: class="edit-page photo-comment" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Photo Comment" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== PhotoTag Pages ====== -->
+
+
+<def tag="index-page" for="PhotoTag">
+  <page merge title="Photo Tags">
+    <body: class="index-page photo-tag" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Photo Tags</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="PhotoTag">
+  <page merge title="New Photo Tag">
+    <body: class="new-page photo-tag" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Photo Tag</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Photo Tag"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="PhotoTag">
+  <page merge title="Photo Tag">
+
+    <body: class="show-page photo-tag" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Photo Tag</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="photo, tag" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="PhotoTag">
+  <page merge title="Edit Photo Tag">
+
+    <body: class="edit-page photo-tag" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Photo Tag" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== PhotoUser Pages ====== -->
+
+
+<def tag="index-page" for="PhotoUser">
+  <page merge title="Photo Users">
+    <body: class="index-page photo-user" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Photo Users</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="PhotoUser">
+  <page merge title="New Photo User">
+    <body: class="new-page photo-user" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Photo User</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Photo User"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="PhotoUser">
+  <page merge title="Photo User">
+
+    <body: class="show-page photo-user" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Photo User</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="photo, user" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="PhotoUser">
+  <page merge title="Edit Photo User">
+
+    <body: class="edit-page photo-user" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Photo User" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== Photo Pages ====== -->
+
+
+<def tag="index-page" for="Photo">
+  <page merge title="Photos">
+    <body: class="index-page photo" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Photos</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Photo">
+  <page merge title="New Photo">
+    <body: class="new-page photo" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Photo</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Photo"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Photo">
+  <page merge title="Photo">
+
+    <body: class="show-page photo" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="public, deleted" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Photo</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="filename, original_filename, path, album, user" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Photo">
+  <page merge title="Edit Photo">
+
+    <body: class="edit-page photo" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Photo" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== Tag Pages ====== -->
+
+
+<def tag="index-page" for="Tag">
+  <page merge title="Tags">
+    <body: class="index-page tag" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Tags</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="Tag">
+  <page merge title="New Tag">
+    <body: class="new-page tag" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New Tag</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create Tag"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="Tag">
+  <page merge title="Tag">
+
+    <body: class="show-page tag" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit Tag</a>
+          </header>
+    
+          <section param="content-body">
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="Tag">
+  <page merge title="Edit Tag">
+
+    <body: class="edit-page tag" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This Tag" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== UserGroup Pages ====== -->
+
+
+<def tag="index-page" for="UserGroup">
+  <page merge title="User Groups">
+    <body: class="index-page user-group" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">User Groups</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="UserGroup">
+  <page merge title="New User Group">
+    <body: class="new-page user-group" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New User Group</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create User Group"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="UserGroup">
+  <page merge title="User Group">
+
+    <body: class="show-page user-group" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit User Group</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="group, user" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="UserGroup">
+  <page merge title="Edit User Group">
+
+    <body: class="edit-page user-group" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This User Group" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== UserUser Pages ====== -->
+
+
+<def tag="index-page" for="UserUser">
+  <page merge title="User Users">
+    <body: class="index-page user-user" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">User Users</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <a action="new" to="&model" param="new-link"/>      
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="UserUser">
+  <page merge title="New User User">
+    <body: class="new-page user-user" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New User User</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create User User"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="UserUser">
+  <page merge title="User User">
+
+    <body: class="show-page user-user" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit User User</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="user" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="UserUser">
+  <page merge title="Edit User User">
+
+    <body: class="edit-page user-user" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This User User" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+
+
+  
+<!-- ====== User Pages ====== -->
+
+
+<def tag="index-page" for="User">
+  <page merge title="Users">
+    <body: class="index-page user" param/>
+    
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Users</h2>
+
+        <p param="count" if>There <count prefix="are"/></p>
+      </header>
+      
+      <section param="content-body">
+
+        <page-nav param="top-page-nav"/>
+
+        <collection param/>
+
+        <page-nav param="bottom-page-nav"/>
+
+
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="new-page" for="User">
+  <page merge title="New User">
+    <body: class="new-page user" param/>
+    
+    <content: param>
+      <section param="content-header">
+        <h2 param="heading">New User</h2>
+      </section>
+      
+      <section param="content-body">
+        <form param>
+          <submit: label="Create User"/>
+        </form>
+      </section>
+    </content:>
+  </page>
+</def>
+
+
+<def tag="show-page" for="User">
+  <page merge title="User">
+
+    <body: class="show-page user" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading"><name/></h2>
+
+            <record-flags fields="administrator" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">Edit User</a>
+          </header>
+    
+          <section param="content-body">
+            <field-list fields="email_address" param/>
+          </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="edit-page" for="User">
+  <page merge title="Edit User">
+
+    <body: class="edit-page user" param/>
+
+    <content:>
+      <section param="content-header">
+        <h2 param="heading">Edit <type-name/></h2>
+        <delete-button label="Remove This User" param/>
+      </section>
+
+      <section param="content-body">
+        <form param/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+
+<def tag="signup-page" polymorphic/>
+<def tag="signup-page" for="User">
+
+  <page title="Signup" merge>
+
+    <body: class="lifecycle-start-page signup-page" param/>
+
+    <content: param>
+      <header param="content-header">
+        <h2 param="heading">Signup</h2>
+      </header>
+
+      <section param="content-body">
+        <signup-form param="form"/>
+      </section>
+    </content:>
+
+  </page>
+</def>
+
+<def tag="reset-password-page" polymorphic/>
+<def tag="reset-password-page" for="User">
+  <page title="Reset Password" merge>
+    
+    <body: class="lifecycle-transition-page reset-password-page" param/>
+    
+    <content:>
+      <header param="content-header">
+        <h2 param="heading">Reset Password</h2>
+      </header>
+      
+      <section param="content-body">
+        <reset-password-form param="form"/>
+      </section>
+    </content:>
+    
+  </page>
+</def>
+
+

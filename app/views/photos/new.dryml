@@ -1,0 +1,8 @@
+<new-page>
+<form:>
+<field-list: fields="filename, path, public, deleted, album" />
+</form:>
+</new-page>
+
+<!-- <field-list: fields="filename, uri, public, deleted, album" />
+-->

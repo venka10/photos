@@ -1,0 +1,22 @@
+<album-edit-page>
+    <body: class="album-edit-page"/>
+    <form:>
+        <field-list: replace>
+            <section-group>
+                <section>
+                    <field-list fields="name, parent" />
+                </section>
+				
+                <section>
+                	<h3>Photos</h3>
+                    <input-many:photos>
+                    	<field-list fields="uri, public" >
+                    		<uri-label:>Photo</uri-label:>
+							<uri-value:><img src="#{this}" width="40%" height="40%"/></uri-value:>
+                    	</field-list>
+                    </input-many:photos>
+                </section>
+            </section-group>
+        </field-list:>
+    </form:>
+</album-edit-page>

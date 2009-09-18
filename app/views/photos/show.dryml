@@ -1,0 +1,9 @@
+<show-page>
+    <content-header:>
+        <albums-bread-crumbs with="&this.album" includethis="true"/><h2><%= this.title.nil? || this.title.blank? ? this.filename : this.title %></h2>
+        <record-flags fields="" /><a action="edit" if="&can_edit?">Edit Photo</a>
+    </content-header:>
+    <content-body:>
+        <img src='#{this.uri}' width='50%' height='50%'/>
+    </content-body:>
+</show-page>

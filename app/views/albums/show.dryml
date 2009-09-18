@@ -1,0 +1,21 @@
+<show-page>
+	<content-header: >
+		<albums-bread-crumbs/>
+        <h2 ><name/></h2><record-flags fields="" /><a action="edit" if="&can_edit?" >Edit Album</a>
+    </content-header:>
+	<content-body: >
+        <if test="&!this.photos.empty?">
+            <section>
+                <h3>Photos</h3>
+                <collection:photos />
+            </section>
+        </if>
+        <if test="&!this.children.empty?">
+            <section>
+                <h3>Folders</h3>
+                <collection:children/>
+            </section>
+        </if>
+    </content-body:>
+
+</show-page>

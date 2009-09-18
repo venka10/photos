@@ -1,0 +1,51 @@
+<include src="rapid" plugin="hobo"/><include src="taglibs/auto/rapid/cards"/><include src="taglibs/auto/rapid/pages"/><include src="taglibs/auto/rapid/forms"/><set-theme name="clean"/>
+<def tag="app-name">
+    Photos
+</def>
+<def tag="card" for="Photo">
+    <card class="photo" param="default" merge>
+        <header: param>
+            <p>
+                <h4><name/></h4><a><img src="#{this.uri}" width="40%" height="40%"/></a>
+            </p>
+        </header:>
+    </card>
+</def>
+
+<def tag="main-nav">
+    <navigation class="main-nav" merge-attrs param="default">
+    </navigation>
+</def>
+
+<def tag="card" for="Album">
+    <card class="album" param="default" merge>
+        <header: param>
+            <h4 param="heading"><a><name/>
+                    <br/>
+                    <if test="&!this.photos.empty?">
+                        <img src="#{this.photos.first.uri}" width="20%" height="20%"/>
+                    </if>
+                </a>
+            </h4>
+        </header:>
+    </card>
+</def>
+
+
+<def tag="albums-bread-crumbs" attr="includethis">
+	<%= link_to "Back to Albums", albums_path %>
+	<% list = this.ancestors %>
+	<if test="includethis">
+		 <% list << this %>
+    </if>
+	<% list.each do |x| -%>
+		<%= link_to " / " + x.name, album_path(x.id) %>
+	<% end -%>
+</def>
+
+<def tag="album-edit-page">
+  <edit-page merge without-delete-button>
+    <heading:>Edit Album</heading:>
+    <form: multipart/>
+  </edit-page>
+</def>
