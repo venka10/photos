@@ -1,0 +1,6 @@
+[submodule "vendor/plugins/acts_as_tree"]
+	path = vendor/plugins/acts_as_tree
+	url = git://github.com/rails/acts_as_tree.git
+[submodule "vendor/plugins/acts_as_ordered_list"]
+	path = vendor/plugins/acts_as_ordered_list
+	url = git://github.com/jhnsntmthy/acts_as_ordered_list.git
