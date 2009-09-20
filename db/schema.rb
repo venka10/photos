@@ -9,13 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090918045108) do
+ActiveRecord::Schema.define(:version => 20090920063952) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "parent_id"
+    t.integer  "owner_user_id"
   end
 
   create_table "comments", :force => true do |t|
@@ -60,7 +61,6 @@ ActiveRecord::Schema.define(:version => 20090918045108) do
 
   create_table "photos", :force => true do |t|
     t.string   "filename"
-    t.boolean  "public"
     t.boolean  "deleted"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(:version => 20090918045108) do
     t.string   "title"
     t.string   "original_filename"
     t.string   "path"
+    t.integer  "parent_id"
+    t.integer  "position"
+    t.integer  "sharing_type_id"
+  end
+
+  create_table "sharing_types", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tags", :force => true do |t|

@@ -10,10 +10,17 @@ class Album < ActiveRecord::Base
   end
 
   has_many :photos
+  belongs_to :user, :foreign_key=>"owner_user_id"
   
   named_scope :toplevel, :conditions => "parent_id is null"
   
-
+  def show?(acting_user)
+    Photo.viewable(acting_user).album_is(self.id).length > 0
+  end
+  
+  def owner
+     User.find(self.owner_user_id)
+  end
 
   # --- Permissions --- #
 

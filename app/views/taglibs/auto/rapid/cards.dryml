@@ -67,6 +67,17 @@
   </card>
 </def>
 
+<def tag="card" for="SharingType">
+  <card class="sharing-type" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+    <body: param>
+      <view:description param="description"/>
+    </body:>
+  </card>
+</def>
+
 <def tag="card" for="Tag">
   <card class="tag" param="default" merge>
     <header: param>

@@ -7,45 +7,75 @@
         <header: param>
             <p>
                 <h4><name/></h4><a><img src="#{this.uri}" width="40%" height="40%"/></a>
-            </p>
+            </p><hidden-id-field/>
         </header:>
+        <body:>
+            <if test="this.album.owner_user_id=#{current_user.id}">
+                <section>
+                    <field-list fields="title,deleted,sharing_type">
+                        <sharing-type-view:>
+                        	<% SharingType.find(:all, :order=>"id desc").each do |st| %>
+								<% if !this.nil? && this.to_s == st.name %>
+									<radio value="#{st.id}" checked><%= st.name %></radio>
+								<% else %>
+									<radio value="#{st.id}"><%= st.name %></radio>
+								<% end %>
+                            <% end %>
+                        </sharing-type-view:>
+                    </field-list>
+                </section>
+            </if>
+        </body:>
     </card>
 </def>
-
 <def tag="main-nav">
     <navigation class="main-nav" merge-attrs param="default">
     </navigation>
 </def>
-
 <def tag="card" for="Album">
     <card class="album" param="default" merge>
         <header: param>
-            <h4 param="heading"><a><name/>
-                    <br/>
-                    <if test="&!this.photos.empty?">
-                        <img src="#{this.photos.first.uri}" width="20%" height="20%"/>
-                    </if>
-                </a>
+            <h4 param="heading"><a><name/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#{album_more_path(this.id)}">More Information</a>
+                <br/>
+                <if test="&!this.photos.empty?">
+                    <% [0,1,2,3,4].each do |x| %>
+                    <a href="#{albumview_photos_path}?album=#{this.id}"><%= "<img src='#{this.photos[x].uri}' width='19%' height='19%'/>" %></a>
+                    <% end %>
+                </if>
             </h4>
         </header:>
     </card>
 </def>
-
-
 <def tag="albums-bread-crumbs" attr="includethis">
-	<%= link_to "Back to Albums", albums_path %>
-	<% list = this.ancestors %>
-	<if test="includethis">
-		 <% list << this %>
+    <%= link_to "Back to Albums", albums_path %>
+    <% list = this.ancestors %>
+    <if test="includethis">
+        <% list << this %>
     </if>
-	<% list.each do |x| -%>
-		<%= link_to " / " + x.name, album_path(x.id) %>
-	<% end -%>
+    <% list.each do |x| -%>
+    <%= link_to " / " + x.name, album_path(x.id) %>
+    <% end -%>
 </def>
-
 <def tag="album-edit-page">
-  <edit-page merge without-delete-button>
-    <heading:>Edit Album</heading:>
-    <form: multipart/>
-  </edit-page>
+    <edit-page merge without-delete-button>
+        <heading:>
+            Edit Album
+        </heading:>
+        <form: multipart/>
+    </edit-page>
+</def>
+<def tag="photo-edit-page">
+    <edit-page merge without-delete-button without-search-box>
+        <heading:>
+            Edit Photo
+        </heading:>
+        <form: multipart/>
+    </edit-page>
+</def>
+<def tag="radio" attrs="value, checked">
+    <% value ||= this ? '1' : '0'
+    attributes[:checked] = 'checked' if checked || (checked == nil && value == (this.nil? ? nil : this.to_s)) %>
+    <div class="radio">
+        <input type='radio' name="#{param_name_for_this}" value="#{value.to_s}" merge-attrs/><do param="default" with="&@photo"/>
+    </div>
 </def>

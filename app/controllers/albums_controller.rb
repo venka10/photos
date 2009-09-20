@@ -7,6 +7,8 @@ class AlbumsController < ApplicationController
   def photos
   
   end
+ 
+  show_action :more
 
   def index
     hobo_index Album.toplevel
