@@ -7,7 +7,11 @@
         <if test="&!this.photos.empty?">
             <section>
                 <h3>Photos</h3>
-                <collection:photos />
+                <% photo_list = Photo.viewable(current_user).album_is(this.id).onlyjpg %>
+				<% # = photo_list.length %>
+				<% photo_list.each do |x| %>
+					<card with="&x"/>
+				<% end %>
             </section>
         </if>
         <if test="&!this.children.empty?">

@@ -10,7 +10,7 @@
             </p><hidden-id-field/>
         </header:>
         <body:>
-            <if test="this.album.owner_user_id=#{current_user.id}">
+            <if test="&this.album.owner_user_id==current_user.object_id">
                 <section>
                     <field-list fields="title,deleted,sharing_type">
                         <sharing-type-view:>
@@ -35,14 +35,18 @@
 <def tag="card" for="Album">
     <card class="album" param="default" merge>
         <header: param>
-            <h4 param="heading"><a><name/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#{album_more_path(this.id)}">More Information</a>
+            <h4 param="heading"><a><name/></a>
+			    <% # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#{album_more_path(this.id)}">More Information</a> %>
                 <br/>
-                <if test="&!this.photos.empty?">
-                    <% [0,1,2,3,4].each do |x| %>
-                    <a href="#{albumview_photos_path}?album=#{this.id}">
-                    	<%= "<img src='#{this.photos[x].uri}' width='19%' height='19%'/>" %>
-						<% # = imagemagick_tag '#{this.photos[x].uri}', 'resize(100x100)' %>
-					</a>
+				<%= photo_list = Photo.viewable(current_user).album_is(this.id).onlyjpg %>
+                <if test="&!photo_list.empty?">
+                    <% for x in 0..[4,photo_list.length].min do  %>
+	                    <if test="&!photo_list[x].nil?">
+							<a href="#{albumview_photos_path}?album=#{this.id}">
+		                    	<%= "<img src='#{photo_list[x].thumbnail_uri}' width='19%' height='19%'/>" %>
+								
+							</a>
+						</if>
                     <% end %>
                 </if>
             </h4>
