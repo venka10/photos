@@ -39,7 +39,10 @@
                 <br/>
                 <if test="&!this.photos.empty?">
                     <% [0,1,2,3,4].each do |x| %>
-                    <a href="#{albumview_photos_path}?album=#{this.id}"><%= "<img src='#{this.photos[x].uri}' width='19%' height='19%'/>" %></a>
+                    <a href="#{albumview_photos_path}?album=#{this.id}">
+                    	<%= "<img src='#{this.photos[x].uri}' width='19%' height='19%'/>" %>
+						<% # = imagemagick_tag '#{this.photos[x].uri}', 'resize(100x100)' %>
+					</a>
                     <% end %>
                 </if>
             </h4>

@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
 
   hobo_model_controller
 
+
   auto_actions :all
 
   index_action :albumview, :albumviewedit
@@ -15,6 +16,7 @@ class PhotosController < ApplicationController
   end
   
   def albumviewupdate
+    nil.venka
     @photos = params["will_paginate/collection"]
     @photos.each_pair do |id, value|
       photo = Photo.find(value[:id])
@@ -23,7 +25,13 @@ class PhotosController < ApplicationController
       photo.sharing_type = SharingType.find(value[:sharing_type])
       photo.save
     end
-    redirect_to albumviewedit_photos_path + "?album=#{params[:id]}"
+    if params[:page]
+      p = params[:page].to_i + 1
+    else
+      p = 2
+    end
+    params[:page].venka
+    redirect_to albumviewedit_photos_path + "?album=#{params[:id]}&page=#{p}"
   end
   
   def albumview

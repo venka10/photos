@@ -1,0 +1,3 @@
+<index-page title="Album #{@album.name}">
+	<heading:><%= "Album: #{@album.name}" %></heading:>
+</index-page>

@@ -1,0 +1,38 @@
+<photo-edit-page>
+    <body: class="album-edit-page"/>
+    <before-heading:>
+        <albums-bread-crumbs with="&this.album" includethis="true"/>
+    </before-heading:>
+    <heading:>
+        <center>
+            Edit Photo
+        </center>
+    </heading:>
+    <after-heading:>
+        <center>
+            <img src="#{this.uri}" height="75%" width="75%" />
+        </center>
+    </after-heading:>
+    <form:>
+        <field-list: replace>
+            <section-group>
+                <section>
+                    <field-list fields="title, filename, original_filename, path, sharing_type, deleted, album, user">
+                        <filename-view:>
+                            <%= this %>
+                        </filename-view:>
+                        <original-filename-view:>
+                            <%= this %>
+                        </original-filename-view:>
+                        <path-view:>
+                            <%= this %>
+                        </path-view:>
+                    </field-list>
+                </section>
+            </section-group>
+        </field-list:>
+        <actions:>
+            <submit name="button" label="<< Save & Previous" if="&controller.previous?"/><submit name="button" label="Save"/><submit name="button" label="Save & Next >>" if="&controller.next?"/><or-cancel/>
+        </actions:>
+    </form:>
+</photo-edit-page>

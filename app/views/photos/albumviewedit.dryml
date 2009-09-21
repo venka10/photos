@@ -1,0 +1,14 @@
+<index-page title="Album #{@album.name}">
+	<heading:><%= "Album: #{@album.name}" %></heading:>
+	<content-body: replace>
+		<a action="new" to="&model" />      
+        <page-nav />
+		<form action="#{photo_albumviewupdate_path(@album.id)}" without-new-button >
+			
+        <collection/>
+		
+		<submit label="Save & Next >>"/>
+		</form>
+        <page-nav />
+	</content-body:>
+</index-page>
