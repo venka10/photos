@@ -38,7 +38,7 @@
             <h4 param="heading"><a><name/></a>
 			    <% # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#{album_more_path(this.id)}">More Information</a> %>
                 <br/>
-				<%= photo_list = Photo.viewable(current_user).album_is(this.id).onlyjpg %>
+				<% photo_list = Photo.viewable(current_user).album_is(this.id).onlyjpg %>
                 <if test="&!photo_list.empty?">
                     <% for x in 0..[4,photo_list.length].min do  %>
 	                    <if test="&!photo_list[x].nil?">
