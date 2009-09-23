@@ -10,7 +10,7 @@
             </p><hidden-id-field/>
         </header:>
         <body:>
-            <if test="&this.album.owner_user_id==current_user.object_id">
+            <if test="&this.album.owner_user_id==current_user.id">
                 <section>
                     <field-list fields="title,deleted,sharing_type">
                         <sharing-type-view:>
