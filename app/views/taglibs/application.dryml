@@ -12,7 +12,7 @@
         <body:>
             <if test="&this.album.owner_user_id==current_user.id">
                 <section>
-                    <field-list fields="title,deleted,sharing_type">
+                    <field-list fields="title,deleted,sharing_type, album">
                         <sharing-type-view:>
                         	<% SharingType.find(:all, :order=>"id desc").each do |st| %>
 								<% if !this.nil? && this.to_s == st.name %>
