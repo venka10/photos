@@ -6,7 +6,7 @@
     <card class="photo" param="default" merge>
         <header: param>
             <p>
-                <h4><name/></h4><a><img src="#{this.uri}" width="40%" height="40%"/></a>
+                <h4><name/></h4><a><img src="#{this.show_uri}" /></a>
             </p><hidden-id-field/>
         </header:>
         <body:>
@@ -43,7 +43,7 @@
                     <% for x in 0..[4,photo_list.length].min do  %>
 	                    <if test="&!photo_list[x].nil?">
 							<a href="#{albumview_photos_path}?album=#{this.id}">
-		                    	<%= "<img src='#{photo_list[x].thumbnail_uri}' width='19%' height='19%'/>" %>
+		                    	<%= "<img src='#{photo_list[x].thumbnail_uri}' />" %>
 								
 							</a>
 						</if>

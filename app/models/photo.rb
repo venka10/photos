@@ -35,9 +35,14 @@ class Photo < ActiveRecord::Base
   named_scope :next_siblings, lambda{|parent_id, position| {:conditions => "photos.parent_id=#{parent_id} and photos.position > #{position}" }}
   named_scope :onlyjpg, :conditions => "photos.filename like '%JPG'"
   
-  def uri
+  def show_uri
+    "#{self.path}#{self.filename}".sub(/JPG/,'progressive.jpg')
+  end
+  
+  def original_uri
     "#{self.path}#{self.filename}"
   end
+  
   
   def thumbnail_uri
     "#{self.path}#{self.filename}".sub(/JPG/,'gif')
