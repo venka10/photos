@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
   auto_actions :all
 
   index_action :albumview, :albumviewedit
-  web_method :albumviewupdate
+    
   
   def albumviewedit
     @album = Album.find(params[:album])
@@ -15,8 +15,9 @@ class PhotosController < ApplicationController
     end
   end
   
+  web_method :albumviewupdate
   def albumviewupdate
-    nil.venka
+    #nil.venka
     @photos = params["will_paginate/collection"]
     @photos.each_pair do |id, value|
       photo = Photo.find(value[:id])
@@ -25,19 +26,19 @@ class PhotosController < ApplicationController
       photo.sharing_type = SharingType.find(value[:sharing_type])
       photo.save
     end
-    if params[:page]
-      p = params[:page].to_i + 1
-    else
-      p = 2
-    end
-    params[:page].venka
-    redirect_to albumviewedit_photos_path + "?album=#{params[:id]}&page=#{p}"
+#    if params[:page]
+#      p = params[:page].to_i + 1
+#    else
+#      p = 2
+#    end
+#    params[:page].venka
+#    redirect_to albumviewedit_photos_path + "?album=#{params[:id]}" # &page=#{p}
   end
   
   def albumview
     #nil.venka
     @album = Album.find(params[:album])
-    if @album.owner.id = current_user.id
+    if @album.owner.id == current_user.id
       redirect_to albumviewedit_photos_path + "?album=#{@album.id}"
     end
     if @album
