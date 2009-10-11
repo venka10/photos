@@ -19,12 +19,19 @@ class PhotosController < ApplicationController
   def albumviewupdate
     #nil.venka
     @photos = params["will_paginate/collection"]
-    @photos.each_pair do |id, value|
-      photo = Photo.find(value[:id])
-      photo.title = value[:title]
-      photo.deleted = value[:deleted]
-      photo.sharing_type = SharingType.find(value[:sharing_type])
-      photo.save
+    
+    begin
+      @photos.each_pair do |id, value|
+        photo = Photo.find(value[:id])
+        photo.album = Album.find(value[:album_id])
+        photo.title = value[:title]
+        photo.deleted = value[:deleted]
+        photo.sharing_type = SharingType.find(value[:sharing_type_id]) if value[:sharing_type_id]
+        photo.save
+      end
+    rescue Exception => ex
+      logger.error(ex)
+      ex.venka
     end
 #    if params[:page]
 #      p = params[:page].to_i + 1

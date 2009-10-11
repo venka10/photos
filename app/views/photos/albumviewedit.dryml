@@ -4,11 +4,15 @@
     </heading:>
     <content-body: replace>
         <a action="new" to="&model" /><page-nav/>
+		<% # update="" 
+			#before="$('outputDIV').innerHTML=''; save_button.disabled=true; "
+			#success="$('outputDIV').innerHTML='Saved Successfully!'; $('save_button').disabled=false;" 
+			#failure="$('outputDIV').innerHTML='Unable to save - please contact System Administrator'; $('save_button').disabled=false;"%>
         <form action="#{photo_albumviewupdate_path(@album.id)}" 
 			without-new-button 
 			update="" 
 			before="$('outputDIV').innerHTML=''; save_button.disabled=true; "
-			success="$('outputDIV').innerHTML='Saved Successfully!'; $('save_button').disabled=false;" 
+			success="$('outputDIV').innerHTML='Saved Successfully!'; $('save_button').disabled=false;"
 			failure="$('outputDIV').innerHTML='Unable to save - please contact System Administrator'; $('save_button').disabled=false;">
             <collection/>
             <if test="&@album.owner.id == current_user.id">
@@ -19,4 +23,4 @@
 		
 		<page-nav/>
     </content-body:>
-</index-page>
+</index-page>  

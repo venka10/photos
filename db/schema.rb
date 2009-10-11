@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090920063952) do
+ActiveRecord::Schema.define(:version => 20090927130919) do
 
   create_table "albums", :force => true do |t|
     t.string   "name"
@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(:version => 20090920063952) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "album_id"
-    t.integer  "owner_user_id"
     t.string   "title"
     t.string   "original_filename"
     t.string   "path"
@@ -76,7 +75,6 @@ ActiveRecord::Schema.define(:version => 20090920063952) do
 
   create_table "sharing_types", :force => true do |t|
     t.string   "name"
-    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

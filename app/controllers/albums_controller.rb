@@ -10,8 +10,8 @@ class AlbumsController < ApplicationController
  
   show_action :more
 
-  def index
-    hobo_index Album.toplevel
-  end
+#  def index
+#    hobo_index Album.toplevel
+#  end
 
 end

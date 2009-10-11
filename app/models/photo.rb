@@ -35,6 +35,10 @@ class Photo < ActiveRecord::Base
   named_scope :next_siblings, lambda{|parent_id, position| {:conditions => "photos.parent_id=#{parent_id} and photos.position > #{position}" }}
   named_scope :onlyjpg, :conditions => "photos.filename like '%JPG'"
   
+#  def is_viewable?(acting_user)
+#    self.deleted=0 && ((self.sharing_type_id == SharingType.find_by_name('Public').id && acting_user.guest?) || (!acting_user.guest? && self.user.select{|x| x.user_id == acting_user.id} ) || (self.album.owner_user_id=acting_user.id))
+#  end
+  
   def show_uri
     "#{self.path}#{self.filename}".sub(/JPG/,'progressive.jpg')
   end
@@ -49,9 +53,6 @@ class Photo < ActiveRecord::Base
   end
 
   
-  def before_create
-     self.owner_user_id=acting_user.id
-  end
 
   def previous(acting_user)
     list = Photo.previous_siblings(self.parent_id, self.position).viewable(acting_user)
@@ -70,11 +71,11 @@ class Photo < ActiveRecord::Base
   end
 
   def update_permitted?
-    acting_user.administrator?
+     acting_user.administrator? #  acting_user.id == self.album.owner.id
   end
 
   def destroy_permitted?
-    acting_user.administrator?
+    false # acting_user.administrator?
   end
 
   def view_permitted?(field)

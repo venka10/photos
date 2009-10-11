@@ -1,30 +1,60 @@
-<include src="rapid" plugin="hobo"/><include src="taglibs/auto/rapid/cards"/><include src="taglibs/auto/rapid/pages"/><include src="taglibs/auto/rapid/forms"/><set-theme name="clean"/>
+<include src="rapid" plugin="hobo"/>
+
+<include src="taglibs/auto/rapid/cards"/>
+<include src="taglibs/auto/rapid/pages"/>
+<include src="taglibs/auto/rapid/forms"/>
+
+<include src="hobo-jquery" plugin="hobo-jquery" />
+
+
+<set-theme name="clean"/>
+
+<include src="rapid" plugin="hobo"/>
+<include src="taglibs/auto/rapid/cards"/>
+<include src="taglibs/auto/rapid/pages"/>
+<include src="taglibs/auto/rapid/forms"/><set-theme name="clean"/>
+
 <def tag="app-name">
     Photos
-</def>
+</def>   
+
+<extend tag="page">
+  <old-page merge>
+    <custom-scripts:>
+      <hjq-assets/>
+    </custom-scripts>
+  </old-page>
+</extend>
+
 <def tag="card" for="Photo">
     <card class="photo" param="default" merge>
         <header: param>
             <p>
                 <h4><name/></h4><a><img src="#{this.show_uri}" /></a>
-            </p><hidden-id-field/>
+            </p>
+			<hidden-id-field /> 
         </header:>
         <body:>
             <if test="&this.album.owner_user_id==current_user.id">
                 <section>
-                    <field-list fields="title,deleted,sharing_type, album">
+                	<% # = this.id  %>
+                    <field-list fields="title,deleted,sharing_type,album">
                         <sharing-type-view:>
                         	<% SharingType.find(:all, :order=>"id desc").each do |st| %>
 								<% if !this.nil? && this.to_s == st.name %>
-									<radio value="#{st.id}" checked><%= st.name %></radio>
+									<radio value="#{st.id}" checked ><%= st.name %></radio>
 								<% else %>
-									<radio value="#{st.id}"><%= st.name %></radio>
+									<radio value="#{st.id}" ><%= st.name %></radio>
 								<% end %>
                             <% end %>
+							
                         </sharing-type-view:>
                     </field-list>
                 </section>
             </if>
+			<%= "<script type='text/javascript'>
+					ary = document.getElementByTagName('radio');
+				</script>"%>
         </body:>
     </card>
 </def>
@@ -35,26 +65,27 @@
 <def tag="card" for="Album">
     <card class="album" param="default" merge>
         <header: param>
-            <h4 param="heading"><a><name/></a>
+            <h4 param="heading"><a><name/>
 			    <% # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#{album_more_path(this.id)}">More Information</a> %>
                 <br/>
 				<% photo_list = Photo.viewable(current_user).album_is(this.id).onlyjpg %>
                 <if test="&!photo_list.empty?">
                     <% for x in 0..[4,photo_list.length].min do  %>
 	                    <if test="&!photo_list[x].nil?">
-							<a href="#{albumview_photos_path}?album=#{this.id}">
+							<% # <a href="#{albumview_photos_path}?album=#{this.id}"> %>
 		                    	<%= "<img src='#{photo_list[x].thumbnail_uri}' />" %>
 								
-							</a>
+							<% # </a> %>
 						</if>
                     <% end %>
                 </if>
+				</a>
             </h4>
         </header:>
     </card>
 </def>
 <def tag="albums-bread-crumbs" attr="includethis">
-    <%= link_to "Back to Albums", albums_path %>
+    <%= link_to "Home", albums_path %>
     <% list = this.ancestors %>
     <if test="includethis">
         <% list << this %>
@@ -83,6 +114,7 @@
     <% value ||= this ? '1' : '0'
     attributes[:checked] = 'checked' if checked || (checked == nil && value == (this.nil? ? nil : this.to_s)) %>
     <div class="radio">
-        <input type='radio' name="#{param_name_for_this}" value="#{value.to_s}" merge-attrs/><do param="default" with="&@photo"/>
+    	<% nm = param_name_for_this.slice(0,param_name_for_this.length-1) + "_id]"%>
+        <input type='radio' name="#{nm}" value="#{value.to_s}" merge-attrs/><do param="default" with="&@photo"/>
     </div>
 </def>

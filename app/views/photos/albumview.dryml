@@ -1,3 +1,14 @@
-<index-page title="Album #{@album.name}">
-	<heading:><%= "Album: #{@album.name}" %></heading:>
+<index-page title="Album #{@album.name}" without-count>
+	<content-header:>
+		<do with="&@album">
+	        <albums-bread-crumbs /><h2><name/></h2><record-flags fields="" /><a action="edit" if="&can_edit?">Edit Album</a>
+		</do>
+    </content-header:>
+    <content-body:>
+		<section class="content-body">
+			
+			<collection />
+			<page-nav></page-nav>
+		</section>
+		</content-body:>
 </index-page>

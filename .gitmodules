@@ -4,3 +4,6 @@
 [submodule "vendor/plugins/acts_as_ordered_list"]
 	path = vendor/plugins/acts_as_ordered_list
 	url = git://github.com/jhnsntmthy/acts_as_ordered_list.git
+[submodule "vendor/plugins/hobo"]
+	path = vendor/plugins/hobo
+	url = git://github.com/tablatom/hobo.git

@@ -14,6 +14,10 @@ class Album < ActiveRecord::Base
   
   named_scope :toplevel, :conditions => "parent_id is null"
   
+  def viewable_photos
+    
+  end
+  
   def show?(acting_user)
     Photo.viewable(acting_user).album_is(self.id).length > 0
   end

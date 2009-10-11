@@ -1,17 +1,25 @@
 <show-page>
-	<content-header: >
-		<albums-bread-crumbs/>
-        <h2 ><name/></h2><record-flags fields="" /><a action="edit" if="&can_edit?" >Edit Album</a>
+    <content-header:>
+        <albums-bread-crumbs/><h2><name/></h2><record-flags fields="" /><a action="edit" if="&can_edit?">Edit Album</a>
     </content-header:>
-	<content-body: >
+    <content-body:>
         <if test="&!this.photos.empty?">
             <section>
                 <h3>Photos</h3>
-                <% photo_list = Photo.viewable(current_user).album_is(this.id).onlyjpg %>
-				<% # = photo_list.length %>
-				<% photo_list.each do |x| %>
-					<card with="&x"/>
-				<% end %>
+				<% photo_list = Photo.viewable(current_user).album_is(this.id).onlyjpg %>
+                
+				<do with="&photo_list">
+					<table-plus fields="id">
+						<id-heading:><br/></id-heading:>
+						<id-view:>
+							<%= "<img src='#{this_parent.show_uri}' />"%>
+						</id-view:>
+					</table-plus>
+						
+				</do>
+				
+
+				
             </section>
         </if>
         <if test="&!this.children.empty?">
@@ -21,5 +29,4 @@
             </section>
         </if>
     </content-body:>
-
 </show-page>

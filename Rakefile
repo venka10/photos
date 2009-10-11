@@ -9,4 +9,3 @@ require 'rake/rdoctask'
 
 require 'tasks/rails'
 
-require 'hobo/tasks/rails'
