@@ -1,60 +1,27 @@
 <index-page without-count>
-    <after-scripts:>
-	        <link rel="stylesheet" href="http://view.jquery.com/trunk/plugins/treeview/demo/../jquery.treeview.css" />
-		    <link rel="stylesheet" href="http://view.jquery.com/trunk/plugins/treeview/demo/../red-treeview.css" />
-			<link rel="stylesheet" href="http://view.jquery.com/trunk/plugins/treeview/demo/screen.css" />
-			
-			<script src="http://view.jquery.com/trunk/plugins/treeview/demo/../lib/jquery.js" type="text/javascript"></script>
-		
-			<script src="http://view.jquery.com/trunk/plugins/treeview/demo/../lib/jquery.cookie.js" type="text/javascript"></script>
-			<script src="http://view.jquery.com/trunk/plugins/treeview/demo/../jquery.treeview.js" type="text/javascript"></script>
-			
-			<script type="text/javascript">
-				$(function() {
-					$("#tree").treeview({
-						collapsed: true,
-						animated: "medium",
-						control:"#sidetreecontrol",
-						prerendered: true,
-						persist: "cookie",
-						cookieId: "albums-treeview"
-					});
-				})
-				
-			</script>
-
-    </after-scripts:>
-
-    <content-body: >
-		<section>
-    		<div id="sidetree">
-			<div class="treeheader">&nbsp;</div>
-			<div id="sidetreecontrol"> <a href="?#">Collapse All</a> | <a href="?#">Expand All</a> </div>
-				<% Album.toplevel.each do |x| %>
-		        <ul id="tree" class="treeview">
-		            <album-li-recursive with="&x"></album-li-recursive>
-		        </ul>
-		        <% end %>
-			</div>
-		</section>
-		<section>VENKA</section>	
-    </content-body:>
+	<collection: replace>
+			<% Album.toplevel.each do |x| %>
+				<card with="&x" />
+			<% end %>
+    </collection:>
+	<new-link: replace>
+		<div style="position:relative; width:100%; text-align:right;">
+			<a action="new" to="&model"/>
+		</div>
+	</new-link:>
 </index-page>
 
-<def tag="album-li-recursive">
-	<if test="&this.children && this.children.length>0">
-		<li class="expandable">
-			<div class="hitarea expandable-hitarea"></div>
-			<a href='#{albumview_photos_path}?album=#{this.id}'><%= "#{this.name}"%></a>
-			<% this.children.each do |x| %>
-	        	<ul style="display:none"><album-li-recursive with="&x"></album-li-recursive></ul>
-			<% end %> 
-		</li>
-	</if>
-	<else>
-		<li><a href='#{albumview_photos_path}?album=#{this.id}'><%= "#{this.name}"%></a></li>
-	</else>
-</def>
+<!--
+<% Album.toplevel.each do |x| %>
+	        <album-div-recursive with="&x" depth="0" depthlimit="0"></album-div-recursive>
+        <% end %>
+		-->
 
-		  
+		<!--
 		
+		<table-plus fields="id">
+			<searchform: replace></searchform:>
+			<id-heading:></id-heading:>
+			<id-view:><card with="&this_parent"/></id-view:>
+		</table-plus>
+		-->

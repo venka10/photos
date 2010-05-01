@@ -82,6 +82,7 @@
           </header>
     
           <section param="content-body">
+            <view:description param="description"/>
             <field-list fields="user" param/>
             <section param="collection-section">
               <h3 param="collection-heading">Children</h3>

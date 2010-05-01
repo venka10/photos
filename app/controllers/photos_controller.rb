@@ -60,6 +60,13 @@ class PhotosController < ApplicationController
     end
   end
   
+  show_action :show_ajax do
+    hobo_show 
+    if !@photo.viewable?(current_user)
+      render_403
+    end
+  end
+  
   def update
     hobo_update do
       if params[:button] =~ /next/i
@@ -76,6 +83,32 @@ class PhotosController < ApplicationController
   
   def next?
     @photo.next(current_user)
+  end
+  
+  show_action :img do
+    begin
+      p = Photo.find(params[:id])
+    rescue 
+      p = nil
+    end
+    respond_with_photo(p)
+  end
+  
+  def respond_with_photo(model)
+    logger.error(p)
+    if model.nil? 
+      path = "#{RAILS_ROOT}/public/images/unavailable.png"
+    elsif !model.viewable?(current_user)
+      path = "#{RAILS_ROOT}/public/images/unauthorized.png"
+    else
+      path = model.photo.path(params[:style] ? params[:style] : "original")
+      if path.nil?
+        path = "#{RAILS_ROOT}/public/images/unavailable.png"
+      end
+    end
+
+    send_file_options = { :type => File.mime_type?(path) , :disposition=>'inline' }
+    send_file(path, send_file_options)
   end
   
 end

@@ -6,6 +6,7 @@ class Album < ActiveRecord::Base
   
   fields do
     name :string
+    description :string
     timestamps
   end
 
@@ -13,6 +14,7 @@ class Album < ActiveRecord::Base
   belongs_to :user, :foreign_key=>"owner_user_id"
   
   named_scope :toplevel, :conditions => "parent_id is null"
+  named_scope :this_and_children, lambda { |id| { :conditions => "id in (select b.id from albums b where b.id=#{id} or b.parent_id = #{id})" }} 
   
   def viewable_photos
     

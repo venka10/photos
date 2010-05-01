@@ -1,22 +1,70 @@
 <include src="rapid" plugin="hobo"/>
-
 <include src="taglibs/auto/rapid/cards"/>
 <include src="taglibs/auto/rapid/pages"/>
 <include src="taglibs/auto/rapid/forms"/>
-
 <include src="hobo-jquery" plugin="hobo-jquery" />
+<set-theme name="iceflower"/>
 
-
-<set-theme name="clean"/>
-
-<include src="rapid" plugin="hobo"/>
-<include src="taglibs/auto/rapid/cards"/>
-<include src="taglibs/auto/rapid/pages"/>
-<include src="taglibs/auto/rapid/forms"/><set-theme name="clean"/>
 
 <def tag="app-name">
-    Photos
+    Around the World!
 </def>   
+
+<def tag="main-nav">
+  <navigation class="main-nav" merge-attrs param="default">
+    <nav-item href="#{base_url}/">Home</nav-item>
+    <nav-item href="#{albums_path}">Albums</nav-item>
+    <nav-item href="/about">About</nav-item>
+    <nav-item href="/contact">Contact</nav-item>
+  </navigation>
+</def>
+
+<def tag="page" attrs="title, full-title">
+  <% full_title ||= "#{title} : #{app_name}" %>
+  <html merge-attrs>
+    <head param>
+      <title param><%= strip_tags full_title %></title>
+      <do param="stylesheets">
+        <!-- note that this is probably overridden in your app/views/taglibs/themes/xxx/xxx.dryml --> 
+        <stylesheet name="reset, hobo-rapid"/>
+        <theme-stylesheet />
+        <stylesheet name="application" param="app-stylesheet"/>
+      </do>
+
+      <do param="scripts">
+        <javascript param name="prototype, effects, dragdrop, controls, lowpro, hobo-rapid"/>
+        <if-ie version="lt IE 7" param="fix-ie6">
+          <javascript name="IE7"/>
+          <javascript name="ie7-recalc"/>
+        </if-ie>
+        <do param="custom-scripts"/>
+        <javascript param="application-javascript" name="application"/>
+      </do>
+    </head>
+
+    <body param>
+      <set-scoped flash-rendered="&false">
+        <ajax-progress param/>
+        <header class="page-header" param>
+          <account-nav if="&login_url(Hobo::User.default_user_model)" param/>
+          
+          <!-- live-search param if="&defined_route? :site_search"/ -->
+		  <div class="cover"></div> 
+		  <div class="title">
+				<h1><app-name/></h1><br/>
+				<span class="signature">with Preet and Venka</span>
+		  </div>
+		  <main-nav current="&title" param/>
+        </header>
+        <section with-flash-messages param="content">
+        	
+		</section>
+        <footer class="page-footer" param/>
+        <page-scripts param/>
+      </set-scoped>
+    </body>
+  </html>
+</def>
 
 <extend tag="page">
   <old-page merge>
@@ -58,33 +106,36 @@
         </body:>
     </card>
 </def>
-<def tag="main-nav">
-    <navigation class="main-nav" merge-attrs param="default">
-    </navigation>
-</def>
 <def tag="card" for="Album">
-    <card class="album" param="default" merge>
-        <header: param>
-            <h4 param="heading"><a><name/>
-			    <% # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#{album_more_path(this.id)}">More Information</a> %>
-                <br/>
-				<% photo_list = Photo.viewable(current_user).album_is(this.id).onlyjpg %>
-                <if test="&!photo_list.empty?">
-                    <% for x in 0..[4,photo_list.length].min do  %>
-	                    <if test="&!photo_list[x].nil?">
-							<% # <a href="#{albumview_photos_path}?album=#{this.id}"> %>
-		                    	<%= "<img src='#{photo_list[x].thumbnail_uri}' />" %>
-								
-							<% # </a> %>
-						</if>
-                    <% end %>
-                </if>
-				</a>
-            </h4>
-        </header:>
+    <card class="album album-card" param="default" merge >
+        <a><name/>
+		<div class="container">
+            <div class="album left">
+                
+					<% photo_list = Photo.viewable(current_user).album_is(this.id).onlyjpg %>
+                    <if test="&!photo_list.empty?">
+                        <% for x in 0..[0,photo_list.length].min do %>
+                        <if test="&!photo_list[x].nil?">
+                            <% # <a href="#{albumview_photos_path}?album=#{this.id}"> %>
+                            <%= "<div class='thumbnail'><img src='#{photo_img_path(:id => x.id, :style=>:thumb)}' /></div>" %>
+                            <% # </a> %>
+                        </if>
+                        <% end %>
+                    </if>
+                    <else>
+                        <%= "<div class='thumbnail'><img src='#{photo_img_path(:id=>78, :style=>:thumb)}' /></div>" %>
+                    </else>
+                
+            </div>
+			<div class="right">
+				<p><%= this.description %></p>
+			</div>
+        </div>
+		</a>
     </card>
 </def>
 <def tag="albums-bread-crumbs" attr="includethis">
+	<div class="albums bread-crumbs">
     <%= link_to "Home", albums_path %>
     <% list = this.ancestors %>
     <if test="includethis">
@@ -93,6 +144,7 @@
     <% list.each do |x| -%>
     <%= link_to " / " + x.name, album_path(x.id) %>
     <% end -%>
+	</div>
 </def>
 <def tag="album-edit-page">
     <edit-page merge without-delete-button>
@@ -117,4 +169,60 @@
     	<% nm = param_name_for_this.slice(0,param_name_for_this.length-1) + "_id]"%>
         <input type='radio' name="#{nm}" value="#{value.to_s}" merge-attrs/><do param="default" with="&@photo"/>
     </div>
+</def>
+
+<def tag="show-photo-link" attrs="link-text">
+	<if test="&!this.nil?" >
+		<a href='#' onclick="updatePhoto('#{photo_show_ajax_path(this.id)}','photos-part'); return false;">
+			<if test="&link_text">
+				<%= link_text %>
+			</if>
+			<else>
+				<%= "#{this.name}"%>
+			</else>
+		</a>
+	</if>
+	<else>
+		<if test="&link_text">
+				<%= link_text %>
+		</if>
+	</else>
+</def>
+
+
+
+<def tag="album-div-recursive" attrs="depth, depthlimit">
+	<% style = "margin-left: #{depth*50}px;" %>
+	<% style = "float:left; " if depth.to_i > 0 %>
+	<div class="albumdiv#{depth}" style="#{style}">
+		<card />
+		<% depth_int = depth.to_i + 1%>
+		<if test="&(depth_int <= depthlimit.to_i) && (this.children && this.children.length>0)">
+			<if test="&depth_int.to_i > 0">
+				<div class="albumdiv#{depth}spacer" >
+					<img src="/images/transparent.gif" height="1px" width="25px"/>
+				</div>
+			</if>
+			<% this.children.each do |x| %>
+	        	<album-div-recursive with="&x" depth="&depth_int" depthlimit="&depthlimit"/>
+			<% end %> 
+			
+		</if>
+	</div>
+</def>		  
+		
+
+<def tag="album-li-recursive">
+	<if test="&this.children && this.children.length>0">
+		<li class="expandable">
+			<div class="hitarea expandable-hitarea"></div>
+			<show-photo-link with="&this.photos.first" link-text="&this.name"/>
+			<% this.children.each do |x| %>
+	        	<ul style="display:none;"><album-li-recursive with="&x"></album-li-recursive></ul>
+			<% end %> 
+		</li>
+	</if>
+	<else>
+		<li><show-photo-link  with="&this.photos.first" link-text="&this.name"/></li>
+	</else>
 </def>

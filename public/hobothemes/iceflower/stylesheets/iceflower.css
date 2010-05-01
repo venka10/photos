@@ -1,0 +1,299 @@
+/*
+Design by Metamorphosis Design
+http://www.metamorphozis.com
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+*
+
+body, .index-page, .front-page {
+	margin: 0 auto;
+	padding: 0;
+	/*background: rgb(194,222,233) url(../images/back_all.gif) repeat-x top left;
+	  */
+	font-size: 13px;
+	color: rgb(45,110,102);
+	width: 830px;
+}
+
+body, th, td, input, textarea, select, option {
+	font-weight: normal;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+	/*color: #0F7EAC;*/
+	color: rgb(45,110,102);
+}
+
+h1 {
+	font-size: 24px;
+}
+
+h2 {
+	font-size: 18px;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+
+a {
+	color: rgb(45,110,102);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: rgb(45,110,102);
+}
+
+
+
+/* Page Header */
+
+
+/* Content Header */
+
+.content-header {
+	
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	padding: 40px 0 0 0;
+}
+
+#logo h1 {
+	margin: 0;
+	text-transform: lowercase;
+	font-size: 24px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+#logo h1 a {
+	padding-right: 20px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+#logo H2 {
+	text-transform: uppercase;
+	font-size: 10px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.account-nav {
+	position:relative;
+    float:right;
+    margin: 5px 5px 0 0; /*top right bottom left */
+	font-size: 11px;
+	top: 0px;
+}
+.account-nav li {
+	float: left; 
+	margin-left: 0; padding-left: 20px; 
+	color: #ffffff;
+	list-style: none;
+}
+.account-nav a {font-weight: bold; color:rgb(45,110,102); text-decoration: none;}
+.account-nav a:hover {border-bottom: 1px dotted rgb(45,110,102); color:rgb(45,110,102);}
+
+
+/* Menu */
+
+.main-nav {
+	position:relative;
+	float: right;
+	left: -10px; top: -85px;
+}
+
+.main-nav ul {
+	margin: 0px;
+	padding: 343px 0px 0px 0px;
+	list-style: none;
+}
+
+.main-nav li {
+	display: inline;
+}
+
+.main-nav a {
+	display: block;
+	float: left;
+	margin-left: 20px;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-size: 1.36em;
+	color: rgb(45,110,102);
+	border-bottom: 3px solid rgb(255,255,255);
+}
+
+.main-nav a:hover, .active a, .current a {
+	border-bottom: 3px solid rgb(45,110,102);
+}
+
+
+.subnav {
+	position:relative;
+	margin-left: 10px; 
+}
+
+.subnav ul {
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	list-style: none;
+}
+
+.subnav li {
+	display: inline;
+}
+
+.subnav a {
+	display: block;
+	float: left;
+	margin-left: 20px;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-size: 1.06em;
+	color: rgb(45,110,102);
+	border-bottom: 1px solid white;
+}
+
+.subnav a:hover {
+	border-bottom: 1px solid rgb(45,110,102);
+}
+
+
+.title {
+	position:relative;
+	padding: 20px 20px;
+	/*background: url(../images/bg04.jpg) repeat-x top left;*/
+	background: rgb(45,110,102);
+	border: 5px solid #FFFFFF;
+	z-index:20;
+	/* top:15px; */
+	top:-50px;
+	left: 80px; 
+	width: 270px; 
+	font-family: "trebuchet ms";
+}
+
+.title h1 {
+	color: #ffffff;
+	font-weight: 900;	
+}
+
+.signature {
+	color: #ffffff;
+	margin-left: 100px; 
+	font-size: 16px;
+}
+
+
+/* Page */
+
+.page, .front-page {
+
+	
+}
+
+/* Content */
+
+#content {
+	float: left;
+	width: 590px;
+}
+
+
+
+
+
+.byline {
+	margin: 0;
+	color: #0F7EAC;
+}
+
+.meta {
+	text-align: left;
+	color: #646464;
+}
+
+.meta .more {
+	padding-left: 20px;
+	background: url(../images/img03.gif) no-repeat left center;
+}
+
+.meta .comments {
+	padding-left: 20px;
+	background: url(../images/img04.gif) no-repeat left center;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: right;
+	margin-top: 50px;
+	width: 200px;
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#sidebar li {
+}
+
+#sidebar li ul {
+	padding: 15px 0;
+}
+
+#sidebar li li {
+	padding: 5px;
+	padding-left: 20px;
+}
+
+#sidebar h2 {
+	margin: 0;
+	padding: 10px 0 0 20px;
+	height: 40px;
+	color: #000000;
+	background: url(../images/small.gif) repeat-x;
+}
+
+#sidebar a {
+}
+
+#sidebar a:hover {
+}
+
+/* Footer */
+
+#footer {
+	clear: both;
+	margin: 0px;
+	padding-top: 20px;
+	height: 60px;
+	border-top: #0F7EAC solid 4px;
+	background: #F2F2F2 url(../images/bg02.jpg) repeat-x left top;
+}
+
+#footer p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 10px;
+	text-align: center;
+	color: #717171;
+}
+

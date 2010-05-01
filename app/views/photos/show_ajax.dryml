@@ -1,0 +1,10 @@
+<show-page>
+	<!-- replace <head: ></head:> -->
+    <body: replace>
+        	<div id="ajax-progress"><spinner/>Loading...</div>
+        	<show-photo-link  with="&this.previous(current_user)" link-text="Previous"  if="&this.previous(current_user)"/>
+			<img src='#{this.show_uri}'/>
+			<show-photo-link  with="&this.next(current_user)" link-text="Next" if="&this.next(current_user)"/>
+    	
+	</body:>
+</show-page>

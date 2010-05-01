@@ -1,0 +1,720 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <title>jhnsntmthy's acts_as_ordered_list at master - GitHub</title>
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub" />
+    <link rel="fluid-icon" href="http://github.com/fluidicon.png" title="GitHub" />
+
+    
+      <link href="http://assets2.github.com/stylesheets/bundle.css?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" media="screen" rel="stylesheet" type="text/css" />
+    
+
+    
+      
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+        <script src="http://assets0.github.com/javascripts/bundle.js?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" type="text/javascript"></script>
+      
+    
+    
+  
+    
+  
+
+  <link href="http://github.com/feeds/jhnsntmthy/commits/acts_as_ordered_list/master" rel="alternate" title="Recent Commits to acts_as_ordered_list:master" type="application/atom+xml" />
+
+    <meta name="description" content="Acts as Ordered List copied to github" />
+
+
+    
+
+    <script type="text/javascript">
+      github_user = null
+    </script>
+  </head>
+
+  
+
+  <body>
+    
+
+    <div id="main">
+      <div id="header" class="">
+        <div class="site">
+          <div class="logo">
+            <a href="http://github.com"><img src="/images/modules/header/logov3.png" alt="github" /></a>
+          </div>
+          
+            <div class="topsearch">
+  <form action="/search" id="top_search_form" method="get">
+    <input type="search" class="search" name="q" /> <input type="submit" value="Search" />
+    <input type="hidden" name="type" value="Everything" />
+    <input type="hidden" name="repo" value="" />
+    <input type="hidden" name="langOverride" value="" />
+    <input type="hidden" name="start_value" value="1" />
+  </form>
+  <div class="links">
+    <a href="/repositories">Browse</a> | <a href="/guides">Guides</a> | <a href="/search">Advanced</a>
+  </div>
+</div>
+          
+            
+              <div class="actions">
+                
+                  <a href="http://github.com">Home</a>
+                  <a href="/plans"><b><u>Pricing and Signup</u></b></a>
+                  <a href="http://github.com/popular/forked">Repositories</a>
+                  
+                  <a href="/blog">Blog</a>
+                
+                <a href="https://github.com/login">Login</a>
+              </div>
+            
+        </div>
+      </div>
+
+      
+        
+    <div id="repo_menu">
+      <div class="site">
+        <ul>
+          
+            <li class="active"><a href="http://github.com/jhnsntmthy/acts_as_ordered_list/tree/master">Source</a></li>
+
+            <li class=""><a href="http://github.com/jhnsntmthy/acts_as_ordered_list/commits/master">Commits</a></li>
+
+            
+            <li class=""><a href="/jhnsntmthy/acts_as_ordered_list/network">Network (0)</a></li>
+
+            
+
+            
+              
+              <li class=""><a href="/jhnsntmthy/acts_as_ordered_list/issues">Issues (0)</a></li>
+            
+
+            
+              
+              <li class=""><a href="/jhnsntmthy/acts_as_ordered_list/downloads">Downloads (0)</a></li>
+            
+
+            
+              
+              <li class=""><a href="http://wiki.github.com/jhnsntmthy/acts_as_ordered_list">Wiki (1)</a></li>
+            
+
+            <li class=""><a href="/jhnsntmthy/acts_as_ordered_list/graphs">Graphs</a></li>
+
+            
+
+          
+        </ul>
+      </div>
+    </div>
+
+  <div id="repo_sub_menu">
+    <div class="site">
+      <div class="joiner"></div>
+      
+
+      
+
+      
+
+      
+        <ul>
+          <li>
+            <a class="active" href="/jhnsntmthy/acts_as_ordered_list/tree/master">master</a>
+          </li>
+          <li>
+            <a href="#">all branches</a>
+            <ul>
+              
+                
+                  <li><a href="/jhnsntmthy/acts_as_ordered_list/tree/master">master</a></li>
+                
+              
+            </ul>
+          </li>
+          <li>
+            <a href="#">all tags</a>
+            
+          </li>
+        </ul>
+
+      
+    </div>
+  </div>
+
+  <div class="site">
+    
+
+
+
+
+
+
+
+<div id="repos">
+  
+
+
+<script type="text/javascript">
+  GitHub.currentCommitRef = "master"
+  GitHub.currentRepoOwner = "jhnsntmthy"
+  GitHub.currentRepo = "acts_as_ordered_list"
+  
+</script>
+
+
+
+  <div class="repo public" id="repo_details">
+    <div class="title">
+      <div class="path">
+        <a href="/jhnsntmthy">jhnsntmthy</a> / <b><a href="http://github.com/jhnsntmthy/acts_as_ordered_list/tree">acts_as_ordered_list</a></b>
+
+        
+
+          <span id="edit_button" style="display:none;">
+            <a href="/jhnsntmthy/acts_as_ordered_list/edit"><img alt="edit" class="button" src="http://assets1.github.com/images/modules/repos/edit_button.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></a>
+          </span>
+
+          
+            <span id="pull_request_button" style="display:none;">
+              <a href="/jhnsntmthy/acts_as_ordered_list/pull_request/" class="pull_request_button"><img alt="pull request" class="button" src="http://assets0.github.com/images/modules/repos/pull_request_button.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></a>
+            </span>
+            
+            <span id="fast_forward_button" style="display:none;">
+              <a href="/jhnsntmthy/acts_as_ordered_list/fast_forward" id="ff_button"><img alt="fast forward" class="button" src="http://assets0.github.com/images/modules/repos/fast_forward_button.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></a>
+            </span>
+
+            <span id="fork_button">
+              <a href="/jhnsntmthy/acts_as_ordered_list/fork"><img alt="fork" class="button" src="http://assets1.github.com/images/modules/repos/fork_button.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></a>
+            </span>
+          
+
+          <span id="watch_button">
+            <a href="/jhnsntmthy/acts_as_ordered_list/toggle_watch" class="toggle_watch"><img alt="watch" class="button" src="http://assets0.github.com/images/modules/repos/watch_button.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></a>
+          </span>
+          
+          <span id="unwatch_button" style="display:none;">
+            <a href="/jhnsntmthy/acts_as_ordered_list/toggle_watch" class="toggle_watch"><img alt="watch" class="button" src="http://assets0.github.com/images/modules/repos/unwatch_button.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></a>
+          </span>
+
+          
+            <a href="#" id="download_button" rel="jhnsntmthy/acts_as_ordered_list"><img alt="download tarball" class="button" src="http://assets3.github.com/images/modules/repos/download_button.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></a>
+          
+        
+      </div>
+
+      <div class="security private_security" style="display:none">
+        <a href="#private_repo" rel="facebox"><img src="/images/icons/private.png" alt="private" /></a>
+      </div>
+
+      <div id="private_repo" class="hidden">
+        This repository is private.
+        All pages are served over SSL and all pushing and pulling is done over SSH.
+        No one may fork, clone, or view it unless they are added as a <a href="/jhnsntmthy/acts_as_ordered_list/edit">member</a>.
+
+        <br/>
+        <br/>
+        Every repository with this icon (<img src="/images/icons/private.png" alt="private" />) is private.
+      </div>
+
+      <div class="security public_security" style="">
+        <a href="#public_repo" rel="facebox"><img src="/images/icons/public.png" alt="public" /></a>
+      </div>
+
+      <div id="public_repo" class="hidden">
+        This repository is public.
+        Anyone may fork, clone, or view it.
+
+        <br/>
+        <br/>
+        Every repository with this icon (<img src="/images/icons/public.png" alt="public" />) is public.
+      </div>
+
+      
+
+        <div class="flexipill">
+          <a href="/jhnsntmthy/acts_as_ordered_list/network">
+          <table cellpadding="0" cellspacing="0">
+            <tr><td><img alt="Forks" src="http://assets1.github.com/images/modules/repos/pills/forks.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></td><td class="middle"><span>0</span></td><td><img alt="Right" src="http://assets2.github.com/images/modules/repos/pills/right.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></td></tr>
+          </table>
+          </a>
+        </div>
+
+        <div class="flexipill">
+          <a href="/jhnsntmthy/acts_as_ordered_list/watchers">
+          <table cellpadding="0" cellspacing="0">
+            <tr><td><img alt="Watchers" src="http://assets1.github.com/images/modules/repos/pills/watchers.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></td><td class="middle"><span>1</span></td><td><img alt="Right" src="http://assets2.github.com/images/modules/repos/pills/right.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /></td></tr>
+          </table>
+          </a>
+        </div>
+      </div>
+
+    <div class="meta">
+      <table>
+        
+        <tr>
+          <td class="label">Description:</td>
+          <td>
+            <span id="repository_description" rel="/jhnsntmthy/acts_as_ordered_list/edit/update">Acts as Ordered List copied to github</span>
+            <a href="#description" class="edit_link action" style="display:none;">edit</a>
+          </td>
+        </tr>
+
+        
+            <tr>
+              <td class="label">Homepage:</td>
+              <td>
+                                
+                <span id="repository_homepage" rel="/jhnsntmthy/acts_as_ordered_list/edit/update">
+                  <a href="http://"></a>
+                </span>
+                <a href="#homepage" class="edit_link action" style="display:none;">edit</a>
+              </td>
+            </tr>
+
+          
+            <tr>
+              <td class="label"><span id="public_clone_text" style="display:none;">Public&nbsp;</span>Clone&nbsp;URL:</td>
+              
+              <td>
+                <a href="git://github.com/jhnsntmthy/acts_as_ordered_list.git" class="git_url_facebox" rel="#git-clone">git://github.com/jhnsntmthy/acts_as_ordered_list.git</a>
+                      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+              width="110"
+              height="14"
+              class="clippy"
+              id="clippy" >
+      <param name="movie" value="/flash/clippy.swf"/>
+      <param name="allowScriptAccess" value="always" />
+      <param name="quality" value="high" />
+      <param name="scale" value="noscale" />
+      <param NAME="FlashVars" value="text=git://github.com/jhnsntmthy/acts_as_ordered_list.git">
+      <param name="bgcolor" value="#F0F0F0">
+      <param name="wmode" value="opaque">
+      <embed src="/flash/clippy.swf"
+             width="110"
+             height="14"
+             name="clippy"
+             quality="high"
+             allowScriptAccess="always"
+             type="application/x-shockwave-flash"
+             pluginspage="http://www.macromedia.com/go/getflashplayer"
+             FlashVars="text=git://github.com/jhnsntmthy/acts_as_ordered_list.git"
+             bgcolor="#F0F0F0"
+             wmode="opaque"
+      />
+      </object>
+
+                <div id="git-clone" style="display:none;">
+                  Give this clone URL to anyone.
+                  <br/>
+                  <code>git clone git://github.com/jhnsntmthy/acts_as_ordered_list.git </code>
+                </div>
+              </td>
+            </tr>
+          
+          
+          <tr id="private_clone_url" style="display:none;">
+            <td class="label">Your Clone URL:</td>
+            
+            <td>
+
+              <div id="private-clone-url">
+                <a href="git@github.com:jhnsntmthy/acts_as_ordered_list.git" class="git_url_facebox" rel="#your-git-clone">git@github.com:jhnsntmthy/acts_as_ordered_list.git</a>
+                <input type="text" value="git@github.com:jhnsntmthy/acts_as_ordered_list.git" style="display: none;" />
+                      <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+              width="110"
+              height="14"
+              class="clippy"
+              id="clippy" >
+      <param name="movie" value="/flash/clippy.swf"/>
+      <param name="allowScriptAccess" value="always" />
+      <param name="quality" value="high" />
+      <param name="scale" value="noscale" />
+      <param NAME="FlashVars" value="text=git@github.com:jhnsntmthy/acts_as_ordered_list.git">
+      <param name="bgcolor" value="#F0F0F0">
+      <param name="wmode" value="opaque">
+      <embed src="/flash/clippy.swf"
+             width="110"
+             height="14"
+             name="clippy"
+             quality="high"
+             allowScriptAccess="always"
+             type="application/x-shockwave-flash"
+             pluginspage="http://www.macromedia.com/go/getflashplayer"
+             FlashVars="text=git@github.com:jhnsntmthy/acts_as_ordered_list.git"
+             bgcolor="#F0F0F0"
+             wmode="opaque"
+      />
+      </object>
+
+              </div>
+
+              <div id="your-git-clone" style="display:none;">
+                Use this clone URL yourself.
+                <br/>
+                <code>git clone git@github.com:jhnsntmthy/acts_as_ordered_list.git </code>
+              </div>
+            </td>
+          </tr>
+          
+          
+
+          
+
+          
+      </table>
+
+          </div>
+  </div>
+
+
+
+
+
+
+</div>
+
+
+  <div id="commit">
+    <div class="group">
+        
+  <div class="envelope commit">
+    <div class="human">
+      
+        <div class="message"><pre><a href="/jhnsntmthy/acts_as_ordered_list/commit/c525a54544311851a0c457044dccf33733a51c07">v.1.2</a> </pre></div>
+      
+
+      <div class="actor">
+        <div class="gravatar">
+          
+          <img alt="" height="30" src="http://www.gravatar.com/avatar/7eabe79b1cb0d938feb433483dcab485?s=30&amp;d=http%3A%2F%2Fgithub.com%2Fimages%2Fgravatars%2Fgravatar-30.png" width="30" />
+        </div>
+        <div class="name">wizard <span>(author)</span></div>
+          <div class="date">
+            <abbr class="relatize" title="2007-05-17 21:09:23">Thu May 17 21:09:23 -0700 2007</abbr> 
+          </div>
+      </div>
+  
+      
+  
+    </div>
+    <div class="machine">
+      <span>c</span>ommit&nbsp;&nbsp;<a href="/jhnsntmthy/acts_as_ordered_list/commit/c525a54544311851a0c457044dccf33733a51c07" hotkey="c">c525a54544311851a0c457044dccf33733a51c07</a><br />
+      <span>t</span>ree&nbsp;&nbsp;&nbsp;&nbsp;<a href="/jhnsntmthy/acts_as_ordered_list/tree/c525a54544311851a0c457044dccf33733a51c07" hotkey="t">c817711bd870307c72f57742ab4eefed8c3d0813</a><br />
+  
+      
+        <span>p</span>arent&nbsp;
+        
+        <a href="/jhnsntmthy/acts_as_ordered_list/tree/0df6cd49f6f478646c66ea0b5a2600015e03ee18" hotkey="p">0df6cd49f6f478646c66ea0b5a2600015e03ee18</a>
+      
+  
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+
+
+  
+    <div id="path">
+      <b><a href="/jhnsntmthy/acts_as_ordered_list/tree/master">acts_as_ordered_list</a></b> / 
+    </div>
+
+    
+      
+
+  <script type="text/javascript">
+    GitHub.currentTreeSHA = "c525a54544311851a0c457044dccf33733a51c07"
+    GitHub.commitSHA = "c525a54544311851a0c457044dccf33733a51c07"
+    GitHub.currentPath = ""
+  </script>
+
+
+<div id="browser">
+  <table cellpadding="0" cellspacing="0">
+    <tr>
+      <th></th>
+      <th>name</th>
+      <th>age</th>
+      <th>
+        <div class="history">
+          <a href="/jhnsntmthy/acts_as_ordered_list/commits/master/">history</a>
+        </div>
+        message
+      </th>
+    </tr>
+
+    
+
+    
+      <tr class="alt">
+        <td class="icon"> <img alt="file" src="http://assets1.github.com/images/icons/txt.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /> </td>
+        <td class="content"> <a href="/jhnsntmthy/acts_as_ordered_list/blob/c525a54544311851a0c457044dccf33733a51c07/CHANGELOG" id="0f394b00900afe3d960c7858fb05d229fb5cb8a6">CHANGELOG</a></td>
+        
+        <td class="age"> <span class="relatize">Thu May 17 21:09:23 -0700 2007</span> </td>
+        <td class="message"> <a href="/jhnsntmthy/acts_as_ordered_list/commit/c525a54544311851a0c457044dccf33733a51c07" class="message" title="v.1.2">v.1.2
+
+git-svn-id: http://ordered-tree.rubyforg...</a> [wizard] </td>
+      </tr>
+    
+      <tr class="">
+        <td class="icon"> <img alt="file" src="http://assets1.github.com/images/icons/txt.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /> </td>
+        <td class="content"> <a href="/jhnsntmthy/acts_as_ordered_list/blob/c525a54544311851a0c457044dccf33733a51c07/README" id="a593279574b9630262756d50327597b9404b8980">README</a></td>
+        
+        <td class="age"> <span class="relatize">Thu May 17 21:09:23 -0700 2007</span> </td>
+        <td class="message"> <a href="/jhnsntmthy/acts_as_ordered_list/commit/c525a54544311851a0c457044dccf33733a51c07" class="message" title="v.1.2">v.1.2
+
+git-svn-id: http://ordered-tree.rubyforg...</a> [wizard] </td>
+      </tr>
+    
+      <tr class="alt">
+        <td class="icon"> <img alt="file" src="http://assets1.github.com/images/icons/txt.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /> </td>
+        <td class="content"> <a href="/jhnsntmthy/acts_as_ordered_list/blob/c525a54544311851a0c457044dccf33733a51c07/Rakefile" id="fbe4429e0ae8460bc685b29e3e12c946601a836e">Rakefile</a></td>
+        
+        <td class="age"> <span class="relatize">Sun Feb 11 21:11:07 -0800 2007</span> </td>
+        <td class="message"> <a href="/jhnsntmthy/acts_as_ordered_list/commit/9bed8967e2742dacab9852ba9adef49cd43b487a" class="message" title="git-svn-id: http://ordered-tree.rubyforge.org/svn/acts_as_ordered_tree@19 5fcbb5d6-3505-4079-b15f-3bd2d7c89aae">git-svn-id: http://ordered-tree.rubyforge.org/s...</a> [wizard] </td>
+      </tr>
+    
+      <tr class="">
+        <td class="icon"> <img alt="file" src="http://assets1.github.com/images/icons/txt.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /> </td>
+        <td class="content"> <a href="/jhnsntmthy/acts_as_ordered_list/blob/c525a54544311851a0c457044dccf33733a51c07/init.rb" id="6ff2ab18fa11ffef2ca76a4042b2c3e610891642">init.rb</a></td>
+        
+        <td class="age"> <span class="relatize">Sun Feb 11 20:40:46 -0800 2007</span> </td>
+        <td class="message"> <a href="/jhnsntmthy/acts_as_ordered_list/commit/ebc7f97fe7ab95d460e8c6edf105daaac5cefe7e" class="message" title="v.0.2">v.0.2
+
+git-svn-id: http://ordered-tree.rubyforg...</a> [wizard] </td>
+      </tr>
+    
+      <tr class="alt">
+        <td class="icon"> <img alt="directory" src="http://assets0.github.com/images/icons/dir.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /> </td>
+        <td class="content"> <a href="/jhnsntmthy/acts_as_ordered_list/tree/c525a54544311851a0c457044dccf33733a51c07/lib" id="c503c6c7f9fcd797a535ac563d7adab43a8eb065">lib/</a></td>
+        
+        <td class="age"> <span class="relatize">Thu May 17 21:09:23 -0700 2007</span> </td>
+        <td class="message"> <a href="/jhnsntmthy/acts_as_ordered_list/commit/c525a54544311851a0c457044dccf33733a51c07" class="message" title="v.1.2">v.1.2
+
+git-svn-id: http://ordered-tree.rubyforg...</a> [wizard] </td>
+      </tr>
+    
+      <tr class="">
+        <td class="icon"> <img alt="directory" src="http://assets0.github.com/images/icons/dir.png?f03bfdb8c38d382581a6f931b523c6b48bfd08cb" /> </td>
+        <td class="content"> <a href="/jhnsntmthy/acts_as_ordered_list/tree/c525a54544311851a0c457044dccf33733a51c07/test" id="4ae13331995f130ecd31a6a33d0ea568e7fce68c">test/</a></td>
+        
+        <td class="age"> <span class="relatize">Thu May 17 21:09:23 -0700 2007</span> </td>
+        <td class="message"> <a href="/jhnsntmthy/acts_as_ordered_list/commit/c525a54544311851a0c457044dccf33733a51c07" class="message" title="v.1.2">v.1.2
+
+git-svn-id: http://ordered-tree.rubyforg...</a> [wizard] </td>
+      </tr>
+    
+  </table>
+</div>
+    
+    
+  
+
+
+
+  
+
+
+
+  <div id="readme" class="announce"><span class="name">README</span><div class="plain"><pre>= ActsAsOrderedTree
+  v.1.2
+                                 +----+-----------+----------+---------+
+  node_1                         | id | parent_id | position | name    |
+    \_ node_2                    +----+-----------+----------+---------+
+    \_ node_3                    |  1 |         0 |        1 | Node_1  |
+    |    \_ node_4               |  2 |         1 |        1 | Node_2  |
+    |    \_ node_5               |  3 |         1 |        2 | Node_3  |
+    |    |   \_ node_8           |  4 |         3 |        1 | Node_4  |
+    |    |   \_ node_9           |  5 |         3 |        2 | Node_5  |
+    |    \_ node_10              |  6 |         1 |        3 | Node_6  |
+    |    \_ node_11              |  7 |         1 |        4 | Node_7  |
+    \_ node_6                    |  8 |         5 |        1 | Node_8  |
+    \_ node_7                    |  9 |         5 |        2 | Node_9  |
+    |                            | 10 |         3 |        3 | Node_10 |
+    |                            | 11 |         3 |        4 | Node_11 |
+  node_12                        | 12 |         0 |        2 | Node_12 |
+    \_ node_13                   | 13 |        12 |        1 | Node_13 |
+    \_ node_14                   | 14 |        12 |        2 | Node_14 |
+    |    \_ node_15              | 15 |        14 |        1 | Node_15 |
+    |    \_ node_16              | 16 |        14 |        2 | Node_16 |
+    |    |   \_ node_19          | 17 |        12 |        3 | Node_17 |
+    |    |   \_ node_20          | 18 |        12 |        4 | Node_18 |
+    |    \_ node_21              | 19 |        16 |        1 | Node_19 |
+    |    \_ node_22              | 20 |        16 |        2 | Node_20 |
+    \_ node_17                   | 21 |        14 |        3 | Node_21 |
+    \_ node_18                   | 22 |        14 |        4 | Node_22 |
+                                 +----+-----------+----------+---------+
+
+
+  class Person &lt; ActiveRecord::Base
+    acts_as_ordered_tree :foreign_key =&gt; :parent_id,
+                         :order       =&gt; :position
+  end
+
+  class CreatePeople &lt; ActiveRecord::Migration
+    def self.up
+      create_table :people do |t|
+        t.column :parent_id ,:integer ,:null =&gt; false ,:default =&gt; 0
+        t.column :position  ,:integer
+      end
+      add_index(:people, :parent_id)
+    end
+  end
+
+  Which &quot;in effect&quot; sets up the following:
+
+      belongs_to :parent,
+                 :class_name  =&gt; Person,
+                 :foreign_key =&gt; :parent_id
+
+      has_many   :children,
+                 :class_name  =&gt; Person,
+                 :foreign_key =&gt; :parent_id,
+                 :order       =&gt; :position
+
+
+
+= Overview
+
+     Actions    Tree Methods                                List Method
+ --------------------------------------------------------------------------------------------------
+     Create
+                To create a child object at a specific position,
+                use one of the following:
+                  Person.create(:parent_id =&gt; parent.id, :position =&gt; 2)
+                  parent.children &lt;&lt; Person.new(:position =&gt; 3)
+                  parent.children.create(:position =&gt; 5)
+
+                To create a new 'root', use:
+                  Person.create(:position =&gt; 2)
+
+                :position will default to the bottom of the parent's list
+                :parent_id defaults to 0 (Class.roots)
+
+     Read
+                roots (class method)                        self_and_siblings
+
+                root                                        siblings
+
+                parent                                      position_in_list
+
+                ancestors
+
+                children
+
+                descendants
+
+     Update
+                shift_to(parent = nil, position = nil)      move_above(sibling = nil)
+
+                orphan                                      move_higher
+
+                orphan_children                             move_lower
+
+                parent_adopts_children                      move_to_top
+
+                orphan_self_and_children                    move_to_bottom
+
+                orphan_self_and_parent_adopts_children
+
+     Destroy
+                destroy (deletes all descendants)
+
+                destroy_and_orphan_children
+
+                destroy_and_parent_adopts_children
+
+= Install
+
+  ./script/plugin install svn://rubyforge.org/var/svn/ordered-tree/acts_as_ordered_tree
+
+  To test, run 'rake test:plugins', or 'rake' from the plugin's directory.
+
+  There is a drag-n-drop demo located at svn://rubyforge.org/var/svn/ordered-tree/demo
+
+= License
+
+Copyright (c) 2006,2007 Brian D. Burns &lt;<a href="mailto:wizard.rb@gmail.com">wizard.rb@gmail.com</a>&gt;
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the &quot;Software&quot;), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+</pre></div></div>
+
+  </div>
+
+      
+
+      <div class="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="site">
+        <div class="info">
+          <div class="links">
+            <a href="http://github.com/blog"><b>Blog</b></a> |
+            <a href="http://support.github.com/">Support</a> |
+            <a href="http://github.com/training">Training</a> |
+            <a href="http://github.com/contact">Contact</a> |
+            <a href="http://develop.github.com">API</a> |
+            <a href="http://twitter.com/github">Status</a> |
+            <a href="http://twitter.com/github">GitHub on Twitter</a> |
+            <a href="http://github.com/guides/home">Help</a>
+
+         </div>
+          <div class="company">
+            <span id="_rrt" title="0.11472s from xc88-s00039">GitHub</span>&trade;
+            is <a href="http://logicalawesome.com/">Logical Awesome</a> &copy;2009 | <a href="/site/terms">Terms of Service</a> | <a href="/site/privacy">Privacy Policy</a>
+          </div>
+        </div>
+        <div class="sponsor">
+          <a href="http://engineyard.com"><img src="/images/modules/footer/ey-rubyhosting.png" alt="Engine Yard" /></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="coming_soon" style="display:none;">
+      This feature is coming soon.  Sit tight!
+    </div>
+
+    
+        <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-3769691-2");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+    </script>
+
+    
+  </body>
+</html>
+

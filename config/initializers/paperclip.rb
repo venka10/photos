@@ -1,0 +1,1 @@
+Paperclip.options[:command_path] = "C:\\Program Files\\ImageMagick-6.5.9-Q16"

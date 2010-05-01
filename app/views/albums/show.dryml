@@ -1,32 +1,147 @@
-<show-page>
-    <content-header:>
-        <albums-bread-crumbs/><h2><name/></h2><record-flags fields="" /><a action="edit" if="&can_edit?">Edit Album</a>
-    </content-header:>
-    <content-body:>
-        <if test="&!this.photos.empty?">
-            <section>
-                <h3>Photos</h3>
-				<% photo_list = Photo.viewable(current_user).album_is(this.id).onlyjpg %>
-                
-				<do with="&photo_list">
-					<table-plus fields="id">
-						<id-heading:><br/></id-heading:>
-						<id-view:>
-							<%= "<img src='#{this_parent.show_uri}' />"%>
-						</id-view:>
-					</table-plus>
-						
-				</do>
+<if test="&@isAjax">
+	<section id="content-body">
+	    	<if test="&!this.empty?">
+	            <section style="position:relative; top:20px;" id="photosDiv">
+	                <if test="&1==0">
+					<% this.each do |x| %>
+						<div style="float:left" class="photo-thumbnail">
+							<%= "<img src='#{photo_img_path(:id => x.id, :style=>:thumb)}' />"%>
+							<!-- ?style=\"thumb\" -->
+						</div>						
+					<% end %>
+					</if>
+					<else>
+						Number of photos is <%= this.length %>
+					</else>
+	            </section>
+	        </if>
+			
+			<page-nav/>
+			</section>
+</if>
+<else>
+	<show-page>
+		<content-header: replace>
+			<div class="content-header">
+		        <albums-bread-crumbs with="&@album"/>
+				<div class="album-header-name"><h1><%= @album.name %></h1></div>
+				<div class="filter-box-label">
+					<div style="width:50px; float:left;">filters:</div>
+					<div style="float:right; top:-10px;">
+						<div id="tags-header"><a href="#" onclick="return toggleTagBox();">tags</a></div>
+					</div>
+				</div>
+				<div id="tag-filter-box" style="display:block;">
+					<% @tags.each do |t| %>
+						<div id="tag<%= t.tag_id %>" onclick="toggleSelectTag(this);" class="tag-filter-box-div">
+							<% # = "<a href='#' onclick='toggleSelectTag(\"tag#{t.tag_id}\");'> " %>
+								<%= t.name %>
+							<% # = "</a>" %>
+						</div> 
+					<% end %>
+					<!--
+					<div style="width:100%; float:right;">
+						<div class="go-button-div">GO</div>
+					</div>
+					-->
+				</div>
 				
-
+	    	</div>
+			<script type="text/javascript">
+				<!--
+				function toggleTagBox(){
+					if($('tag-filter-box').style.display=="block"){
+						$('tag-filter-box').style.display='none';
+						$('tags-header').style.border='2px solid white';
+					}else{
+						$('tag-filter-box').style.display='block';
+						$('tags-header').setAttribute('style','border: 2px solid rgb(252, 121, 3); border-bottom:2px solid white;');
+					}
+					return true;
+				}
+				toggleTagBox();
 				
-            </section>
-        </if>
-        <if test="&!this.children.empty?">
-            <section>
-                <h3>Folders</h3>
-                <collection:children/>
-            </section>
-        </if>
-    </content-body:>
-</show-page>
+				function toggleSelectTag(d){
+					//d = $(divId);
+					selected=1;
+					try{
+						selected = d.getAttribute('sel');
+						if(selected == 1){
+							d.setAttribute('sel',0);
+						}else{
+							d.setAttribute('sel',1);
+						}
+					}catch(e){
+						d.setAttribute('sel',1);
+					}
+					if(d.getAttribute('sel')==0){
+						d.style.border='2px white solid';
+					}else{
+						d.style.border='2px rgb(252, 121, 3) solid';
+					}
+					
+					tag_filter_box_children = $('tag-filter-box').childNodes;
+					tag_ids = '';
+					for(i=0; i < tag_filter_box_children.length; i++){
+						if(tag_filter_box_children[i].getAttribute('sel')==1){
+							tag_ids = tag_ids + tag_filter_box_children[i].id.replace("tag","") + ",";
+						}	
+					}
+					$('tag_ids').value = tag_ids;
+					url = '<%= "#{albums_url}/#{@album.id}/show?tag_ids=" %>' + tag_ids;
+					Hobo.AjaxRequest(url,[],  
+						{
+							method:'get',
+							onSuccess: function(t){
+								alert('hi');
+								alert(t);
+								var r = t.responseText;
+								$('content-body').innerHTML = r;
+								alert(r);
+							},
+							onException: function(r,e){
+								alert(r);
+								alert(e);
+							},
+							onFailure: function(t){
+								alert(t.responseText);
+							},
+							onLoading: function(e){
+								$('ajax-progress').style.display='block';
+							}						
+						}
+					
+					);
+				}
+				-->
+			</script>
+		</content-header:>
+	    <content-body: replace>
+	    	<section id="content-body">
+	    	<if test="&!this.empty?">
+	            <section style="position:relative; top:20px;" id="photosDiv">
+	                <if test="&1==0">
+					<% this.each do |x| %>
+						<div style="float:left" class="photo-thumbnail">
+							<%= "<img src='#{photo_img_path(:id => x.id, :style=>:thumb)}' />"%>
+							<!-- ?style=\"thumb\" -->
+						</div>						
+					<% end %>
+					</if>
+					<else>
+						Number of photos is <%= this.length %>
+					</else>
+	            </section>
+	        </if>
+			
+			<page-nav/>
+			</section>
+	    </content-body:>
+		<after-content-body:>
+			<% # @album.venka %>
+			<form action="#{album_path(@album.id)}" update="photos-part" method="GET" id="form">
+				<input type="hidden" id="tag_ids"/>
+			</form>
+		</after-content-body:>
+	</show-page>
+</else>
