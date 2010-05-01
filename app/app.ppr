@@ -1,0 +1,134 @@
+[Config]
+Relative path=1
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.HideOutput=0
+Compilator.LogType=0
+DefaultDir=D:\hobo\photos\app
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+[Project tree]
+app
+	+app
+		+controllers
+			controllers\albums_controller.rb
+			controllers\application.rb
+			controllers\comments_controller.rb
+			controllers\front_controller.rb
+			controllers\groups_controller.rb
+			controllers\photo_albums_controller.rb
+			controllers\photo_comments_controller.rb
+			controllers\photo_tags_controller.rb
+			controllers\photo_users_controller.rb
+			controllers\photos_controller.rb
+			controllers\tags_controller.rb
+			controllers\user_groups_controller.rb
+			controllers\user_users_controller.rb
+			controllers\users_controller.rb
+		-helpers
+			helpers\albums_helper.rb
+			helpers\application_helper.rb
+			helpers\comments_helper.rb
+			helpers\front_helper.rb
+			helpers\groups_helper.rb
+			helpers\photo_albums_helper.rb
+			helpers\photo_comments_helper.rb
+			helpers\photo_tags_helper.rb
+			helpers\photo_users_helper.rb
+			helpers\photos_helper.rb
+			helpers\tags_helper.rb
+			helpers\user_groups_helper.rb
+			helpers\user_users_helper.rb
+			helpers\users_helper.rb
+		+models
+			models\album.rb
+			models\comment.rb
+			models\group.rb
+			models\guest.rb
+			models\photo.rb
+			models\photo_album.rb
+			models\photo_comment.rb
+			models\photo_tag.rb
+			models\photo_user.rb
+			models\tag.rb
+			models\user.rb
+			models\user_group.rb
+			models\user_mailer.rb
+			models\user_user.rb
+		-viewhints
+			viewhints\album_hints.rb
+			viewhints\comment_hints.rb
+			viewhints\group_hints.rb
+			viewhints\photo_album_hints.rb
+			viewhints\photo_comment_hints.rb
+			viewhints\photo_hints.rb
+			viewhints\photo_tag_hints.rb
+			viewhints\photo_user_hints.rb
+			viewhints\tag_hints.rb
+			viewhints\user_group_hints.rb
+			viewhints\user_user_hints.rb
+		+views
+			+albums
+				views\albums\index.dryml
+				views\albums\show.dryml
+			-comments
+			+front
+				views\front\index.dryml
+			-groups
+			-layouts
+			-photo_albums
+			-photo_comments
+			-photo_tags
+			-photo_users
+			+photos
+				views\photos\new.dryml
+			+taglibs
+				+auto
+					+rapid
+						views\taglibs\auto\rapid\pages.dryml
+						views\taglibs\auto\rapid\forms.dryml
+						views\taglibs\auto\rapid\cards.dryml
+				+themes
+					-clean
+						views\taglibs\themes\clean\clean.dryml
+				views\taglibs\application.dryml
+			-tags
+			-user_groups
+			-user_mailer
+				views\user_mailer\forgot_password.erb
+			-user_users
+			-users
+[Open project files]
+0=controllers\front_controller.rb
+1=views\taglibs\auto\rapid\cards.dryml
+2=views\taglibs\application.dryml
+3=models\album.rb
+4=views\taglibs\auto\rapid\pages.dryml
+5=views\albums\index.dryml
+6=views\albums\show.dryml
+[Selected Project Files]
+Main=
+Selected=models\album.rb
+[controllers\front_controller.rb]
+TopLine=1
+Caret=28,6
+[views\taglibs\auto\rapid\cards.dryml]
+TopLine=1
+Caret=1,3
+[views\taglibs\application.dryml]
+TopLine=7
+Caret=18,33
+[models\album.rb]
+TopLine=1
+Caret=3,14
+[views\taglibs\auto\rapid\pages.dryml]
+TopLine=62
+Caret=11,82
+[views\albums\index.dryml]
+TopLine=1
+Caret=14,2
+[views\albums\show.dryml]
+TopLine=1
+Caret=18,6

@@ -1,0 +1,47 @@
+| Beijing
+|   | Day2.Ming.Tombs-Great.Wall
+|   | Holiday.Inn
+|   | Peking.Opera
+|   | Sept-4-2009.lunch
+|   | Sept-5.Ming.Tombs-Great.Wall
+|   | Sept-6-2009
+|   | Sept-7-T-Square-and-shopping
+|   | T-Square.Forbidden.City
+|   | Tea.Shop
+|   ` Temple.of.Heavan
+| Chengdu
+| Chonquing
+| Luoyang
+|   | Longman.Grottos
+|   | Shaolin.Temple
+|   ` WhiteHorseTemple
+| Shanghai
+|   | Central.Hotel[Dinner]_Acrobatic.Show
+|   | Days.Inn.Hotel
+|   | Jade.Buddha.Temple
+|   | Lunch
+|   | Maglev[Magnetic Levitation]Train
+|   | Misc
+|   | Shanghai.Museam
+|   | Silk.Factory
+|   ` Yuyuan.Garden
+| Tibet-Lhasa
+|   | Arrival_Departure_arial_plane_photos.Lhasa
+|   | Potala.Palace
+|   | Sera.Monestary
+|   | Tibet.Dinner.and.Show
+|   | Tibet.Medecine.Hospital
+|   ` Tibet.Museum
+| Train.Luoyang
+| Xian
+|   | Dumpling.Dinner.Show
+|   | Hotel
+|   | Hotel.Lobby
+|   | Last.Day.Lunch-Chrysanthemem.Tea
+|   | Old.Wall-Bicycle
+|   ` Second.Last.Day.Lunch-HansBeer
+` Yangtze.Cruise
+    | Fengdu.Ghost.City.Day4
+    | P1.Presidential.Suite
+    | Shennong.Stream.Day3
+    ` Three.Gorges.Project[Dam_and_5_STep_Locks]

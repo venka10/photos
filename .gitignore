@@ -1,0 +1,4 @@
+*.tmp_*
+cover_photos/*
+log/*
+pictures/*
